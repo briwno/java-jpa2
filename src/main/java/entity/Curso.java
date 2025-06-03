@@ -37,8 +37,7 @@ public class Curso {
 		this.alunos = new ArrayList<Aluno>();
 	}
 	
-	public Curso(Long id, String nome) {
-		this.id = id;
+	public Curso(String nome) {
 		this.nome = nome;
 		this.alunos = new ArrayList<Aluno>();
 	}

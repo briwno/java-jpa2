@@ -3,6 +3,7 @@ package app;
 import java.util.List;
 
 import entity.Aluno;
+import entity.Curso;
 import enumeration.OpcaoMenu;
 import service.AlunoService;
 import service.CursoService;
@@ -129,6 +130,14 @@ public class App {
 	
 	public static void cadastrarCurso() {
 		System.out.println(OpcaoMenu.CADASTRAR_CURSO.getDescricao());
-		// TODO: implementar
+		String nome = leituraTecladoTexto("Digite o nome do curso: ");
+
+		try {
+			Curso curso = new Curso(null, nome);
+			cursoService.cadastrar(curso);
+			System.out.println("Curso cadastrado com sucesso!\n");
+		} catch (Exception e){
+			System.out.println("ERRO: " + e.getMessage());
+		}
 	}
 }
