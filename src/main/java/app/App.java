@@ -109,7 +109,11 @@ public class App {
 
 	private static void realizarMatricula() {
 		System.out.println(OpcaoMenu.REALIZAR_MATRICULA.getDescricao());
-		// TODO: implementar
+		long cpf = leituraTecladoNumerico("Digite o CPF do aluno: ");
+		long idCurso = leituraTecladoNumerico("Digite o ID do curso: ");
+
+		// Chama o service para realizar a matrícula
+		
 	}
 	
 	public static void cadastrarAluno() {
@@ -121,19 +125,19 @@ public class App {
 		// Chama o service para realizar a inserção no banco
 		try {
 			Aluno aluno = new Aluno(nome, String.valueOf(cpf));
-			alunoService.cadastar(aluno);
+			alunoService.cadastrar(aluno);
 			System.out.println("Aluno cadastrado com sucesso!\n");
 		} catch (Exception e) {
 			System.out.println("ERRO: " + e.getMessage());
 		}
 	}
-	
+
 	public static void cadastrarCurso() {
 		System.out.println(OpcaoMenu.CADASTRAR_CURSO.getDescricao());
 		String nome = leituraTecladoTexto("Digite o nome do curso: ");
 
 		try {
-			Curso curso = new Curso(null, nome);
+			Curso curso = new Curso(nome);
 			cursoService.cadastrar(curso);
 			System.out.println("Curso cadastrado com sucesso!\n");
 		} catch (Exception e){

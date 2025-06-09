@@ -9,7 +9,7 @@ public class AlunoService {
 
 	private AlunoRepository alunoRepository = new AlunoRepository();
 	
-	public void cadastar(Aluno aluno) throws Exception {
+	public void cadastrar(Aluno aluno) throws Exception {
 		// Valida os dados do aluno
 		if (aluno == null) {
 			throw new Exception("Aluno inválido");	
