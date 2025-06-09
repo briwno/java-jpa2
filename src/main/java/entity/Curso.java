@@ -22,7 +22,7 @@ public class Curso {
 	@Column(name = "id_curso")
 	private Long id;
 	
-	@Column(name = "nome", length = 100, nullable = false, unique = true)
+	@Column(name = "nome", length = 50, nullable = false, unique = true)
 	private String nome;
 	
 	@ManyToMany
